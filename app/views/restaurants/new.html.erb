@@ -1,0 +1,12 @@
+<h1>Add a restaurant</h1>
+
+<%= form_for(@restaurant) do |f| %>
+  <%= f.text_field :name, placeholder: "↳ name" %>
+  <%= f.text_field :address, placeholder: "↳ adress" %>
+  <%= f.text_field :phone_number, placeholder: "↳ +33 07 12 34 56 78" %>
+  <%= f.select :category, Restaurant::CATEGORIES %>
+
+  <%= f.submit 'create'.upcase %>
+<% end %>
+
+<%= link_to "← back", restaurants_path %>
